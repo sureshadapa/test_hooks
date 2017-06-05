@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+# These are scripting languages like bash, perl, python, etc.
+# To enable this hook, rename this file to "post-comit".
+
+exec git update-server-info
+exec echo $GIT_AUTHOR_DATE
+exec echo $GIT_AUTHOR_EMAIL
+exec echo $GIT_AUTHOR_NAME
+exec echo $GIT_DIR
+exec echo $GIT_EDITOR
+exec echo $GIT_INDEX_FILE
+exec echo $GIT_PREFIX
+exec printenv
